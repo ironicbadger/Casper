@@ -54,6 +54,7 @@ section#results {
     border-radius: 3px;
     -webkit-box-shadow: 0 10px 20px 0 rgba(160, 160, 160, 0.55);
     box-shadow: 0 10px 20px 0 rgba(160, 160, 160, 0.55);
+    font-size: 1.5rem;
 }
 
 section#results div.single-result {
