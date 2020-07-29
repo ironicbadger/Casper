@@ -13,6 +13,7 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/ib.css"}}" />
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -154,9 +155,28 @@
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
 
-    {{!-- ghost-search scripts from https://github.com/HauntedThemes/ghost-search --}}
-
-
+    <script type="text/javascript" src="{{asset "js/fontawesome-all.min.js"}}"></script>
+    <script>
+        $("#my-custom-input").on('keyup', function() {
+            if ($.trim($(this).val().length) > 0) {
+                $('#clear-search').show();
+            } else {
+                $('#clear-search').hide();
+            }
+        });
+        $(".search").on('blur', function() {
+            clearResults();
+            $('#clear-search').hide()
+        });
+        $('.search-fields').on('click', '#clear-search', function() {
+            $(this).hide();
+            clearResults();
+        });
+        function clearResults() {
+            $("#my-custom-input").val('');
+            searchField.clear();
+        }
+    </script>
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
 
