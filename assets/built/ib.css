@@ -1,6 +1,6 @@
 header div.search {
     z-index: 400;
-    width: 100%;
+    width: 60%;
     padding: 1vw 0;
     color: #000;
     position: relative;
@@ -19,7 +19,7 @@ header div.search form div.search-fields #clear-search {
 }
 
 header div.search form input {
-    width: 100%;
+    width: 60%;
     border: 0;
     padding: 1rem;
 }
