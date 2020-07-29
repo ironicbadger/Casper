@@ -157,7 +157,7 @@
 
     <script type="text/javascript" src="{{asset "js/fontawesome-all.min.js"}}"></script>
     <script>
-        $("#my-custom-input").on('keyup', function() {
+        $("#search-field").on('keyup', function() {
             if ($.trim($(this).val().length) > 0) {
                 $('#clear-search').show();
             } else {
@@ -173,7 +173,7 @@
             clearResults();
         });
         function clearResults() {
-            $("#my-custom-input").val('');
+            $("#search-field").val('');
             searchField.clear();
         }
     </script>
