@@ -158,6 +158,15 @@
     <script src="https://unpkg.com/@tryghost/content-api@1.4.1/umd/content-api.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ghost-search@1.0.1/dist/ghost-search.min.js"></script>
 
+    <script type="text/javascript">
+    let ghostSearch = new GhostSearch({
+        input: '#ghost-search-field',
+        results: '#ghost-search-results',
+        key: '7065e94476a3e2abfd98f7006d',
+        url: 'https://blog.ktz.me',
+    })
+    </script>
+
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
 
