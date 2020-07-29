@@ -46,9 +46,11 @@
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-                    <input id="ghost-search-field">
-                <div id="ghost-search-results"></div>
+                
+    <input id="ghost-search-field">
+    <div id="ghost-search-results"></div>
     <br><br><br>
+    
     <div class="inner posts">
 
         <div class="post-feed">
@@ -65,6 +67,6 @@
 
 <script type="text/javascript">
     let ghostSearch = new GhostSearch({
-        results: '#my-custom-results'
+        results: '#ghost-search-results'
     })
 </script>
