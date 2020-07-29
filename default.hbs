@@ -160,10 +160,10 @@
 
     <script type="text/javascript">
     let ghostSearch = new GhostSearch({
-        key: '7065e94476a3e2abfd98f7006d',
+        host: '7065e94476a3e2abfd98f7006d',
         url: 'https://blog.ktz.me',
-        results: '#ghost-search-results',
-        input: '#ghost-search-field',
+        input: '#my-custom-input',
+        results: '#my-custom-results',
         options: {
             keys: [
                 'title',
@@ -172,26 +172,26 @@
         },
         on: {
             afterDisplay: function(results) {
-                if (results.total == 0 && document.getElementById('ghost-search-field').value != '') {
-                    let resultsElement = document.getElementById('ghost-search-results');
+                if (results.total == 0 && document.getElementById('my-custom-input').value != '') {
+                    let resultsElement = document.getElementById('my-custom-results');
                     let e = document.createElement('p');
                     resultsElement.setAttribute("style", "text-align:center;");
                     e.innerHTML = 'No Search results';
                     resultsElement.appendChild(e.firstChild);
                 };
-            },
-            api: {
-                resource: 'posts',
-                parameters: {
-                    fields: ['title', 'slug', 'plaintext'],
-                    formats: 'plaintext',
-                },
-            },
-            template: function(result) {
-                let url = [location.protocol, '//', location.host].join('');
-                return '<ul><li><a href="' + url + '/' + result.slug + '/' + '">' + result.title + '</a></li></ul>';
             }
         },
+        api: {
+            resource: 'posts',
+            parameters: {
+                fields: ['title', 'slug', 'plaintext'],
+                formats: 'plaintext',
+            },
+        },
+        template: function(result) {
+            let url = [location.protocol, '//', location.host].join('');
+            return '<ul><li><a href="' + url + '/' + result.slug + '/' + '">' + result.title + '</a></li></ul>';
+        }
     })
     </script>
 
