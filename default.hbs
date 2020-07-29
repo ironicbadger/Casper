@@ -180,16 +180,16 @@
                     resultsElement.appendChild(e.firstChild);
                 };
             },
-        api: {
-            resource: 'posts',
-            parameters: {
-                fields: ['title', 'slug', 'plaintext'],
-                formats: 'plaintext',
+            api: {
+                resource: 'posts',
+                parameters: {
+                    fields: ['title', 'slug', 'plaintext'],
+                    formats: 'plaintext',
+                },
             },
-        },
-        template: function(result) {
-            let url = [location.protocol, '//', location.host].join('');
-            return '<ul><li><a href="' + url + '/' + result.slug + '/' + '">' + result.title + '</a></li></ul>';
+            template: function(result) {
+                let url = [location.protocol, '//', location.host].join('');
+                return '<ul><li><a href="' + url + '/' + result.slug + '/' + '">' + result.title + '</a></li></ul>';
             }
         },
     })
