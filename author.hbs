@@ -40,18 +40,22 @@
                 </div>
             </div>
         </div>
+        {{! Searching }}
+        <div class="search">
+            <form>
+                <div class="search-fields">
+                    <input placeholder="Search..." id="search-field" />
+                    <i class="fa fa-times-circle" id="clear-search"></i>
+                </div>
+            </form>
+            <section id="results"></section>
+        </div>
     </div>
 </header>
 {{/author}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-    <br>
-    <input id="my-custom-input" type="text">
-    <br>
-    <div id="my-custom-results"></div>
-    <br>
-    <br>
 
     <div class="inner posts">
 
