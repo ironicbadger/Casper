@@ -177,6 +177,44 @@
             searchField.clear();
         }
     </script>
+
+    <script type="text/javascript">
+    let ghostSearch = new GhostSearch({
+        host: 'https://blog.ktz.me',
+        key: '7065e94476a3e2abfd98f7006d',
+        url: 'https://blog.ktz.me',
+        input: '#search-field',
+        results: '#results',
+        options: {
+            parameters: { 
+                filter: "published_at:>'2013-01-01 00:00:00'",
+            },
+            limit: 6        	
+        },
+        on: {
+            afterDisplay: function(results) {
+                if (results.total == 0 && document.getElementById('my-custom-input').value != '') {
+                    let resultsElement = document.getElementById('my-custom-results');
+                    let e = document.createElement('p');
+                    resultsElement.setAttribute("style", "text-align:center;");
+                    e.innerHTML = 'No Search results';
+                    resultsElement.appendChild(e.firstChild);
+                };
+            }
+        },
+        api: {
+            resource: 'posts',
+            parameters: {
+                fields: ['title', 'slug', 'plaintext'],
+                formats: 'plaintext',
+            },
+        },
+        template: function(result) {
+            let url = [location.protocol, '//', location.host].join('');
+            return '<ul><li><a href="' + url + '/' + result.slug + '/' + '">' + result.title + '</a></li></ul>';
+        }
+    })
+    </script>
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
 
