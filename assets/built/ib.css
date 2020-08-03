@@ -16,6 +16,7 @@ header div.search form div.search-fields #clear-search {
     top: 16px;
     cursor: pointer;
     display: none;
+    font-size: 1.5rem;
 }
 
 header div.search form input {

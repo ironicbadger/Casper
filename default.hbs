@@ -172,8 +172,8 @@
             },
             on: {
                 afterDisplay: function(results) {
-                    if (results.total == 0 && document.getElementById('my-custom-input').value != '') {
-                        let resultsElement = document.getElementById('my-custom-results');
+                    if (results.total == 0 && document.getElementById('search-field').value != '') {
+                        let resultsElement = document.getElementById('results');
                         let e = document.createElement('p');
                         resultsElement.setAttribute("style", "text-align:center;");
                         e.innerHTML = 'No Search results';
