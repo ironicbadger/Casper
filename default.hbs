@@ -157,43 +157,7 @@
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
 
-    <script type="text/javascript">
-        let ghostSearch = new GhostSearch({
-            host: 'https://blog.ktz.me',
-            key: '7065e94476a3e2abfd98f7006d',
-            url: 'https://blog.ktz.me',
-            input: '#search-field',
-            results: '#results',
-            options: {
-                parameters: { 
-                    filter: "published_at:>'2013-01-01 00:00:00'",
-                },
-                limit: 6        	
-            },
-            on: {
-                afterDisplay: function(results) {
-                    if (results.total == 0 && document.getElementById('search-field').value != '') {
-                        let resultsElement = document.getElementById('results');
-                        let e = document.createElement('p');
-                        resultsElement.setAttribute("style", "text-align:left;");
-                        e.innerHTML = 'No Search results';
-                        resultsElement.appendChild(e.firstChild);
-                    };
-                }
-            },
-            api: {
-                resource: 'posts',
-                parameters: {
-                    fields: ['title', 'slug', 'plaintext'],
-                    formats: 'plaintext',
-                },
-            },
-            template: function(result) {
-                let url = [location.protocol, '//', location.host].join('');
-                return '<ul><li><a href="' + url + '/' + result.slug + '/' + '">' + result.title + '</a></li></ul>';
-            }
-        })
-    </script>
+
 
     <script>
         $("#search-field").on('keyup', function() {
