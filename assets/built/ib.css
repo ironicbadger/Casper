@@ -91,6 +91,10 @@ div.asciicast  {
     background-color: #e7f2fa;
 }
 
+.postit.postit-hint {
+    background-color: #8ad290;
+}
+
 .postit.postit-warning {
     background-color: #ffedcc;
 }
