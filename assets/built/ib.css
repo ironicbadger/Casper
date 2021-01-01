@@ -105,3 +105,9 @@ div.asciicast  {
     background-color: #ff8e8e;
     color: #fff;
 }
+
+@media (prefers-color-scheme: dark) {
+    .postit.postit-warning {
+        color: rgb(50, 50, 50);
+    }
+}
