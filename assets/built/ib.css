@@ -78,6 +78,10 @@ div.asciicast  {
     text-align: center;
 }
 
+.li {
+    font-size: medium;
+}
+
 .postit {
     -webkit-box-shadow: 3px 3px 5px 0 rgba(160, 160, 160, 0.4);
     box-shadow: 3px 3px 5px 0 rgba(160, 160, 160, 0.4);
