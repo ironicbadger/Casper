@@ -115,3 +115,7 @@ div.asciicast  {
         color: rgb(50, 50, 50);
     }
 }
+
+ul {
+    font-family: 'Encode Sans', sans-serif;
+}
